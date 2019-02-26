@@ -1,0 +1,38 @@
+int LEDA=7;
+int LEDB=6;
+
+int b; int c;
+void setup() {
+  Serial.begin(9600);
+  Serial.println("¿Cuantas veces deseas que encienda el LED amarillo?");
+  while(Serial.available()==0){
+  }
+  b=Serial.parseInt();
+  pinMode(LEDA,OUTPUT);
+  ////////////////////////////////////////////////////////////////////
+  Serial.println("");
+  Serial.println("¿Cuantas veces deseas que encienda el LED verde?");
+  while(Serial.available()==0){
+  }
+  c=Serial.parseInt();
+    pinMode(LEDB,OUTPUT);
+}
+
+void loop() {
+
+for(int a=0; a<b;a++){
+ digitalWrite(LEDA,HIGH);
+delay(300);
+digitalWrite(LEDA,LOW);
+delay(300);
+}
+for(int a=0; a<c;a++){
+digitalWrite(LEDB,HIGH);
+delay(300);
+digitalWrite(LEDB,LOW);
+delay(300); 
+}
+ 
+
+
+}
